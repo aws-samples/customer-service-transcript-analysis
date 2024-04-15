@@ -54,3 +54,22 @@ The AWS identity you assume from your notebook environment (which is the [*Studi
 
 Refer to [Amazon Bedrock documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) to set up and configure permissions. For more information on the fine-grained action and resource permissions in Bedrock, check out the [Bedrock Developer Guide](https://docs.aws.amazon.com/bedrock/).
 
+
+### Specify S3 bucket for Call Analytics files
+
+You can use an S3 bucket of your choice to read call transcripts files from and write call analytics output files to. You will need to specify the S3 bucket name in the Setup Enviroment section of the notebook. 
+
+In the Setup Environment section of the notebook, you will need to specify the name of the S3 bucket you want to use for reading call transcript files from and writing call analytics output files to. Make sure you have the necessary permissions to access the specified S3 bucket. You can choose any existing S3 bucket within your AWS account or create a new one for this purpose.
+
+`s3_bucket = 'your-bucket-name'`
+
+Within the S3 bucket you specified, you will need to create the following sub-folders:
+
+`<your-bucket-name>/call-analytics`
+
+`<your-bucket-name>/call-analytics/call-transcript/`
+
+`<your-bucket-name>/call-analytics/call-summary/`
+
+`<your-bucket-name>/call-analytics/call-score/`
+
